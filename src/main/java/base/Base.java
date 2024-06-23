@@ -23,7 +23,9 @@ public class Base {
 	public static void browserSetup()
 	{
 		WebDriverManager.firefoxdriver().browserVersion("0.26.0").setup();
+		 if (driver == null) {
 		driver = new FirefoxDriver();
+		 }
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.manage().timeouts().setScriptTimeout(30, TimeUnit.SECONDS);
 		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
